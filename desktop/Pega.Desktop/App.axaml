@@ -1,0 +1,97 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="Pega.Desktop.App"
+             RequestedThemeVariant="Dark">
+    <Application.Resources>
+        <SolidColorBrush x:Key="Canvas">#14151B</SolidColorBrush>
+        <SolidColorBrush x:Key="Sidebar">#1A1B23</SolidColorBrush>
+        <SolidColorBrush x:Key="Surface">#1E2029</SolidColorBrush>
+        <SolidColorBrush x:Key="Outline">#30323F</SolidColorBrush>
+        <SolidColorBrush x:Key="Ink">#F1F2F6</SolidColorBrush>
+        <SolidColorBrush x:Key="Muted">#A4A8BA</SolidColorBrush>
+        <SolidColorBrush x:Key="Accent">#D2F982</SolidColorBrush>
+        <SolidColorBrush x:Key="AccentInk">#1B2713</SolidColorBrush>
+        <SolidColorBrush x:Key="AccentSurface">#2A3427</SolidColorBrush>
+        <StreamGeometry x:Key="PegaMark">M 12,1 C 13,7 17,11 23,12 C 17,13 13,17 12,23 C 11,17 7,13 1,12 C 7,11 11,7 12,1 Z</StreamGeometry>
+        <StreamGeometry x:Key="PlusIcon">M 8,2 L 10,2 L 10,8 L 16,8 L 16,10 L 10,10 L 10,16 L 8,16 L 8,10 L 2,10 L 2,8 L 8,8 Z</StreamGeometry>
+        <StreamGeometry x:Key="ArrowIcon">M 9,2 L 16,9 L 14.6,10.4 L 10,5.8 L 10,16 L 8,16 L 8,5.8 L 3.4,10.4 L 2,9 Z</StreamGeometry>
+        <StreamGeometry x:Key="CheckIcon">M 2,9 L 3.5,7.5 L 7,11 L 14.5,3.5 L 16,5 L 7,14 Z</StreamGeometry>
+        <StreamGeometry x:Key="EditIcon">M 3,12 L 12,3 L 15,6 L 6,15 L 3,15 Z M 13,2 L 14,1 L 17,4 L 16,5 Z</StreamGeometry>
+        <StreamGeometry x:Key="ChatIcon">M 2,2 L 16,2 L 16,13 L 7,13 L 3,16 L 3,13 L 2,13 Z M 4,4 L 4,11 L 5,11 L 5,12 L 6,11 L 14,11 L 14,4 Z</StreamGeometry>
+        <StreamGeometry x:Key="LightbulbIcon">M 9,1 C 5.7,1 3,3.7 3,7 C 3,9.2 4.3,11 6,12 L 6,14 L 12,14 L 12,12 C 13.8,11 15,9.2 15,7 C 15,3.7 12.3,1 9,1 Z M 9,3 C 11.2,3 13,4.8 13,7 C 13,8.8 11.9,10.3 10,10.8 L 10,12 L 8,12 L 8,10.8 C 6.2,10.3 5,8.8 5,7 C 5,4.8 6.8,3 9,3 Z M 7,15 L 11,15 L 11,17 L 7,17 Z</StreamGeometry>
+    </Application.Resources>
+    <Application.Styles>
+        <FluentTheme />
+        <Style Selector="Window">
+            <Setter Property="FontFamily" Value="fonts:Inter#Inter" />
+            <Setter Property="Foreground" Value="{StaticResource Ink}" />
+            <Setter Property="Background" Value="{StaticResource Canvas}" />
+        </Style>
+        <Style Selector="TextBlock.muted, SelectableTextBlock.muted">
+            <Setter Property="Foreground" Value="{StaticResource Muted}" />
+        </Style>
+        <Style Selector="Button">
+            <Setter Property="Cursor" Value="Hand" />
+            <Setter Property="FontWeight" Value="SemiBold" />
+        </Style>
+        <Style Selector="Button.primary">
+            <Setter Property="Background" Value="{StaticResource Accent}" />
+            <Setter Property="Foreground" Value="{StaticResource AccentInk}" />
+            <Setter Property="CornerRadius" Value="9" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style Selector="Button.primary:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#E4FFA8" />
+            <Setter Property="Foreground" Value="{StaticResource AccentInk}" />
+        </Style>
+        <Style Selector="Button.primary:pressed /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#BBDC70" />
+            <Setter Property="Foreground" Value="{StaticResource AccentInk}" />
+        </Style>
+        <Style Selector="Button.quiet, Button.suggestion">
+            <Setter Property="Foreground" Value="{StaticResource Ink}" />
+            <Setter Property="BorderBrush" Value="{StaticResource Outline}" />
+            <Setter Property="BorderThickness" Value="1" />
+            <Setter Property="CornerRadius" Value="9" />
+        </Style>
+        <Style Selector="Button.quiet">
+            <Setter Property="Background" Value="Transparent" />
+        </Style>
+        <Style Selector="Button.suggestion">
+            <Setter Property="Background" Value="{StaticResource Surface}" />
+            <Setter Property="Padding" Value="14,12" />
+            <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+        </Style>
+        <Style Selector="Button.quiet:pointerover /template/ ContentPresenter#PART_ContentPresenter, Button.suggestion:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="#292D37" />
+            <Setter Property="BorderBrush" Value="#4A505F" />
+            <Setter Property="Foreground" Value="{StaticResource Ink}" />
+        </Style>
+        <Style Selector="Button.quiet:disabled /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="{StaticResource Outline}" />
+            <Setter Property="Foreground" Value="#777D91" />
+        </Style>
+        <Style Selector="TextBox.compose">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+            <Setter Property="Foreground" Value="{StaticResource Ink}" />
+            <Setter Property="PlaceholderForeground" Value="{StaticResource Muted}" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="FontSize" Value="15" />
+            <Setter Property="FocusAdorner" Value="{x:Null}" />
+        </Style>
+        <Style Selector="TextBox.compose /template/ Border#PART_BorderElement, TextBox.compose:pointerover /template/ Border#PART_BorderElement, TextBox.compose:focus /template/ Border#PART_BorderElement">
+            <Setter Property="Background" Value="Transparent" />
+            <Setter Property="BorderBrush" Value="Transparent" />
+            <Setter Property="BorderThickness" Value="0" />
+        </Style>
+        <Style Selector="Border.composer">
+            <Setter Property="BorderBrush" Value="{StaticResource Outline}" />
+        </Style>
+        <Style Selector="Border.composer:focus-within">
+            <Setter Property="BorderBrush" Value="#64794B" />
+        </Style>
+    </Application.Styles>
+</Application>

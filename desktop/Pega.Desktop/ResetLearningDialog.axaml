@@ -1,0 +1,16 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        x:Class="Pega.Desktop.ResetLearningDialog"
+        Title="Reset learning" Width="420" SizeToContent="Height"
+        CanResize="False" ShowInTaskbar="False" WindowStartupLocation="CenterOwner"
+        Icon="avares://Pega.Desktop/Assets/Pega.png">
+    <StackPanel Margin="22" Spacing="12">
+        <TextBlock Text="Reset learning?" FontSize="21" FontWeight="SemiBold" />
+        <TextBlock Text="This removes the saved examples and learned weights from this profile and starts a new chat."
+                   TextWrapping="Wrap" Classes="muted" FontSize="14" />
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Spacing="8" Margin="0,6,0,0">
+            <Button Classes="quiet" Content="Cancel" IsCancel="True" IsDefault="True" Click="CancelClicked" />
+            <Button Classes="primary" Content="Reset learning" Click="ResetClicked" />
+        </StackPanel>
+    </StackPanel>
+</Window>

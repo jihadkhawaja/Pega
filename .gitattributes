@@ -1,0 +1,10 @@
+# Use consistent line endings across Windows, macOS, and Linux.
+* text=auto eol=lf
+
+# Windows command scripts use CRLF on checkout.
+*.bat text eol=crlf
+*.cmd text eol=crlf
+
+# Keep application artwork byte-for-byte.
+*.ico binary
+*.png binary

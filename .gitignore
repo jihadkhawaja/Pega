@@ -1,0 +1,44 @@
+# Python environments, caches, and build output
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.ruff_cache/
+.pytest_cache/
+.mypy_cache/
+.coverage
+.coverage.*
+htmlcov/
+*.egg-info/
+/build/
+/dist/
+
+# .NET and IDE output
+[Bb]in/
+[Oo]bj/
+.vs/
+*.user
+*.suo
+*.rsuser
+TestResults/
+/artifacts/
+*.nupkg
+*.snupkg
+
+# Pega profiles and locally downloaded models
+pega.sqlite3
+pega.sqlite3-journal
+pega.sqlite3-shm
+pega.sqlite3-wal
+/.cache/
+*.safetensors
+*.gguf
+
+# Local environment and operating system files
+.env
+.env.*
+!.env.example
+!.env.template
+.DS_Store
+Thumbs.db
+Desktop.ini
